@@ -1,6 +1,6 @@
 {
-  "name": "create-material-ui-app",
-  "version": "1.0.0",
+  "name": "wisp-spacex",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.8.2",
@@ -38,6 +38,7 @@
     "@storybook/addons": "^5.0.11",
     "@storybook/react": "^5.0.11",
     "babel-loader": "^8.0.5",
+    "prettier": "^2.6.0",
     "storybook-addon-material-ui": "0.9.0-alpha.21"
   }
 }
