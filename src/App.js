@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import SpaceXProvider from './components/SpaceXProvider';
@@ -9,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <h1>SpaceX Launches</h1>
+          <img/><h1>SpaceX Launches</h1>
       </header>
       <SpaceXProvider>
         <LaunchGrid />
