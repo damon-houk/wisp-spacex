@@ -54,10 +54,12 @@ export default function LaunchGrid() {
     ];
 
     const cellClickHandler = (params) => {
-        alert(JSON.stringify(params.row, null, 2, 4))
-        if (params.field == 'details') {
-            setDialogData({title: `Description For Launch ${params.row.name}`, text: params.value})
-        }
+
+        alert(params.row.links.presskit)
+        params.row.links.presskit ? (window.location.href = params.row.links.presskit) : setDialogData({
+            title: `No Press Kit For ${params.row.name}`,
+            text: `${params.row.links.wikipedia ? `Wikipedia URL: ${params.row.links.wikipedia}` : 'No wikipedia link.'}`
+        })
     }
 
     return <React.Fragment>{(status !== STATUS_FETCHING) ? <div style={{height: 800, width: '100%'}}>

@@ -32,7 +32,7 @@ const SpaceXProvider = ({ spaceXAPIURL, children }) => {
                                 flight_number: 1,
                                 details: 1,
                                 date_utc: 1,
-                                presskit: 1
+                                links: 1
                             },
                     },
                 })
