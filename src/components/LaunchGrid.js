@@ -9,7 +9,6 @@ import Box from '@material-ui/core/Box';
 
 import {useSpaceX, STATUS_FETCHING} from "./SpaceXProvider";
 
-const testLaunches = JSON.parse('[{"rocket":{"name":"Falcon 1","id":"5e9d0d95eda69955f709d1eb"},"details":"Engine failure at 33 seconds and loss of vehicle","flight_number":1,"name":"FalconSat","id":"5eb87cd9ffd86e000604b32a"},{"rocket":{"name":"Falcon 1","id":"5e9d0d95eda69955f709d1eb"},"details":"Successful first stage burn and transition to second stage, maximum altitude 289 km, Premature engine shutdown at T+7 min 30 s, Failed to reach orbit, Failed to recover first stage","flight_number":2,"name":"DemoSat","id":"5eb87cdaffd86e000604b32b"},{"rocket":{"name":"Falcon 1","id":"5e9d0d95eda69955f709d1eb"},"details":"Residual stage 1 thrust led to collision between stage 1 and stage 2","flight_number":3,"name":"Trailblazer","id":"5eb87cdbffd86e000604b32c"},{"rocket":{"name":"Falcon 1","id":"5e9d0d95eda69955f709d1eb"},"details":"Ratsat was carried to orbit on the first successful orbital launch of any privately funded and developed, liquid-propelled carrier rocket, the SpaceX Falcon 1","flight_number":4,"name":"RatSat","id":"5eb87cdbffd86e000604b32d"},{"rocket":{"name":"Falcon 1","id":"5e9d0d95eda69955f709d1eb"},"details":null,"flight_number":5,"name":"RazakSat","id":"5eb87cdcffd86e000604b32e"},{"rocket":{"name":"Falcon 9","id":"5e9d0d95eda69973a809d1ec"},"details":null,"flight_number":6,"name":"Falcon 9 Test Flight","id":"5eb87cddffd86e000604b32f"},{"rocket":{"name":"Falcon 9","id":"5e9d0d95eda69973a809d1ec"},"details":null,"flight_number":7,"name":"COTS 1","id":"5eb87cdeffd86e000604b330"},{"rocket":{"name":"Falcon 9","id":"5e9d0d95eda69973a809d1ec"},"details":"Launch was scrubbed on first attempt, second launch attempt was successful","flight_number":8,"name":"COTS 2","id":"5eb87cdfffd86e000604b331"},{"rocket":{"name":"Falcon 9","id":"5e9d0d95eda69973a809d1ec"},"details":"CRS-1 successful, but the secondary payload was inserted into abnormally low orbit and lost due to Falcon 9 boost stage engine failure, ISS visiting vehicle safety rules, and the primary payload owner\'s contractual right to decline a second ignition of the second stage under some conditions.","flight_number":9,"name":"CRS-1","id":"5eb87ce0ffd86e000604b332"},{"rocket":{"name":"Falcon 9","id":"5e9d0d95eda69973a809d1ec"},"details":"Last launch of the original Falcon 9 v1.0 launch vehicle","flight_number":10,"name":"CRS-2","id":"5eb87ce1ffd86e000604b333"}]');
 export default function LaunchGrid() {
     const {launches, status} = useSpaceX()
     const [dialogData, setDialogData] = React.useState(undefined)
@@ -54,8 +53,6 @@ export default function LaunchGrid() {
     ];
 
     const cellClickHandler = (params) => {
-
-        alert(params.row.links.presskit)
         params.row.links.presskit ? (window.location.href = params.row.links.presskit) : setDialogData({
             title: `No Press Kit For ${params.row.name}`,
             text: `${params.row.links.wikipedia ? `Wikipedia URL: ${params.row.links.wikipedia}` : 'No wikipedia link.'}`
